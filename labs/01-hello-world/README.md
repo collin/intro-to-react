@@ -10,7 +10,7 @@ This lab will walk you through the process of creating a simple todo list with R
 <div>
 In this Lab, we'll setup our project and launch the vite dev server.
 
-This first Lab will be a little bit of a dive into the deep-end. ⚠
+This first Lab will be a little bit of a dive into the deep-end.
 
 ️ You're not expected to fully understand everything you do in this first lab.
 
