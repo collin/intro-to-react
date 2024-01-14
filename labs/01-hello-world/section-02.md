@@ -45,3 +45,5 @@ Go ahead and save that file, and you should see your browser has reloaded with t
 <div goal></div>
 You've imported the react libraries, created a react root and rendered some content out!
 </aside>
+
+Head on to the [Next Section](./section-03.md)

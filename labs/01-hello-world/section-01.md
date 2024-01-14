@@ -90,3 +90,5 @@ You'll see your html has been loaded.
 <div goal></div>
 You've successfully started a vite dev server and loaded your html.
 </aside>
+
+Head on to the [Next Section](./section-02.md)
