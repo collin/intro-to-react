@@ -1,24 +1,29 @@
-<link rel="stylesheet" href="../../.images/styles.css"></link>
+import { ByHand } from "ByHand";
+import { LookAtBrowser } from "LookAtBrowser";
+import { Objectives } from "Objectives";
+import { Goal } from "Goal";
 
-<aside instruction>
-<div map></div>
-In this section, we'll add the react libraries to our project and render a "Hello World" message to the page.
-</aside>
+export const title = "Add React";
+
+<Objectives>
+  In this section, you will:
+  
+- add the react libraries to our project
+- and render a "Hello World" message to the page.
+
+</Objectives>
 
 ## Add React
 
 Now we're ready to start writing some react code.
 
-<aside instruction>
-<div by-hand></div>
-Type things out by-hand in this section.
-</aside>
+<ByHand>Type things out by-hand in this section.</ByHand>
 
-<br>
+<br />
 
 In `main.js` we're going to import the `react` and `react-dom` libraries. These have already been installed in this repository, so you don't need to do anything to install them. But typically this would be done with `npm install react react-dom`
 
-```js
+```js main.js
 import React from "react";
 import ReactDOM from "react-dom/client";
 ```
@@ -36,14 +41,17 @@ Now we're ready to render our first react component to that root:
 reactRoot.render(<h1>Hello World</h1>, root);
 ```
 
-<aside check>
-Go ahead and save that file, and you should see your browser has reloaded with the new content. This is because vite is watching for changes to your code and automatically reloading the page.
-<div look></div>
-</aside>
+<LookAtBrowser>
 
-<aside goal>
-<div goal></div>
-You've imported the react libraries, created a react root and rendered some content out!
-</aside>
+Go ahead and save that file, and you should see your browser has reloaded with
+the new content. This is because vite is watching for changes to your code and
+automatically reloading the page.
+
+</LookAtBrowser>
+
+<Goal>
+  You've imported the react libraries, created a react root and rendered some
+  content out!
+</Goal>
 
 Head on to the [Next Section](./section-03.md)

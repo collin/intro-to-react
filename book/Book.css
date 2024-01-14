@@ -1,0 +1,40 @@
+html {
+  background: white;
+}
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-margin-collapse: separate;
+}
+
+#book-layout {
+  margin: 0 auto;
+  background-color: #efefef;
+  display: grid;
+  grid-template-columns: 300px 50rem;
+  grid-template-rows: 100vh;
+  overflow: hidden;
+  height: 100%;
+}
+
+#table-of-contents {
+  overflow: auto;
+  & ol,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  & ol {
+    margin-left: 1rem;
+  }
+}
+
+#lesson-contents {
+  overflow: auto;
+}

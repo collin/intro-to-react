@@ -1,9 +1,28 @@
-<link rel="stylesheet" href="../../.images/styles.css"></link>
+import { CopyPaste } from "CopyPaste";
+import { Objectives } from "Objectives";
+import { Questions } from "Questions";
+import { Goal } from "Goal";
 
-<aside instruction>
-<div map></div>
-In this section, we'll create an `index.html`, an empty `main.js` file, and start a vite dev server.
-</aside>
+import openTerminal from "./images/open-terminal.png";
+import openedTerminal from "./images/opened-terminal.png";
+import viteStarted from "./images/vite-started.png";
+import inspectMenu from "./images/inspect-menu.png";
+import devTools from "./images/dev-tools.png";
+
+export const title = "Setup & Launch Vite Bundler";
+
+<Objectives>
+<div>
+  In this section, you will
+  
+  
+- create an `index.html`
+- add an empty `main.js` file
+- and start a vite dev server.
+
+</div>
+
+</Objectives>
 
 ## Setup & Launch Vite Bundler
 
@@ -17,14 +36,14 @@ For this lab, you'll be making all your changes, and doing all your work from th
 
 The first thing we'll need is an `index.html` in that folder.
 
-<aside instruction>
-<div copy-paste></div>
-Go ahead and copy/paste this example. Later examples will call out when to type it out by-hand
-</aside>
+<CopyPaste>
+  Go ahead and copy/paste this example. Later examples will call out when to
+  type it out by-hand
+</CopyPaste>
 
-<br>
+<br />
 
-```html
+```html index.html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,9 +66,11 @@ In that file, pay close attention to two elements in particular:
   <div id="root">`</div>
   ```
 
-<aside note>
-<div questions></div>You might have questions about those elements, make a note and bring them to review. Or if you finish the lab early, that's a good time to do some searching.
-</aside>
+<Questions>
+  You might have questions about those elements, make a note and bring them to
+  review. Or if you finish the lab early, that's a good time to do some
+  searching.
+</Questions>
 
 That html file references a `main.js` file. You'll also need to create that file in your solution folder.
 
@@ -57,38 +78,36 @@ To get started, we're going to need a terminal to build and serve our react code
 
 A quick way to get a terminal open is to right click on `labs/01-hello-world/your-solution` in the VSCode file explorer and click "Open in Integrated Terminal"
 
-<img mw-500 center src="../../.images/open-terminal.png" width="80%" >
+<img class="mw-500 center" src={openTerminal} />
 
 You should see something like this:
 
-<img mw-500 center src="../../.images/opened-terminal.png">
+<img class="mw-500 center" src={openedTerminal} />
 
 In that terminal, start the vite dev server.
 
-```terminal
+```zsh
 npx vite dev
 ```
 
-<aside note>
-<div questions></div>
-`npx` is a tool that comes with `npm`. It's a way to run a command without installing it globally. If you have questions about `npx` bring them to review.
-</aside>
+<Questions>
+  `npx` is a tool that comes with `npm`. It's a way to run a command without
+  installing it globally. If you have questions about `npx` bring them to
+  review.
+</Questions>
 
 You should see this output indicating vite is bundling and serving your code at `localhost:5173`
 
-<img mw-500 center src="../../.images/vite-started.png">
+<img class="mw-500 center" src={viteStarted} />
 
 If you open that page, and open your browser's dev tools...
 
-<img w-400 h-300 center crop-bottom src="../../.images/inspect-menu.png">
+<img class="w-400 h-300 center crop-bottom" src={inspectMenu} />
 
 You'll see your html has been loaded.
 
-![Dev Tools](../../.images/dev-tools.png)
+<img class="w-600 center" src={devTools} />
 
-<aside goal>
-<div goal></div>
-You've successfully started a vite dev server and loaded your html.
-</aside>
+<Goal>You've successfully started a vite dev server and loaded your html.</Goal>
 
 Head on to the [Next Section](./section-02.md)

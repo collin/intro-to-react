@@ -1,8 +1,13 @@
-<link rel="stylesheet" href="../../.images/styles.css"></link>
-<aside instruction>
-<div map></div>
+import { ByHand } from "ByHand";
+import { LookAtBrowser } from "LookAtBrowser";
+import { Objectives } from "Objectives";
+import { Questions } from "Questions";
+import { Goal } from "Goal";
 
-<div>
+export const title = "Create a Todo List";
+
+<Objectives>
+
 We're going to go further in this "Hello World". We're going to create a tiny little todo list. In this section you'll:
 
 - create your first component
@@ -13,16 +18,14 @@ We're going to go further in this "Hello World". We're going to create a tiny li
 
 We'll be moving quickly through this section. If you don't fully understand what you're doing, that's okay. **_Bring those questions to the review_** We'll dig deeper into every part of this throughout the lectures and labs to follow.
 
-</div>
-
-</aside>
+</Objectives>
 
 ## Create a Todo List
 
-<aside instruction>
-<div by-hand></div>
-Do keep typing things out by-hand in this section. It's okay if you don't fully finish, I'll review this section live.
-</aside>
+<ByHand>
+  Do keep typing things out by-hand in this section. It's okay if you don't
+  fully finish, I'll review this section live.
+</ByHand>
 
 First, we'll need to create a component for our todo list. Create a file called `TodoList.js` in your solution folder.
 
@@ -53,11 +56,10 @@ const reactRoot = ReactDOM.createRoot(root);
 ReactDOM.render(<TodoList />, root);
 ```
 
-<aside check>
-Take a look at your browser.
-You should see it has reloaded with the new content.
-<div look></div>
-</aside>
+<LookAtBrowser>
+  Take a look at your browser. You should see it has reloaded with the new
+  content.
+</LookAtBrowser>
 
 Now we're going to add a little bit of state to our component. We're going to use the `useState` hook to keep track of our todo items.
 
@@ -103,16 +105,14 @@ function TodoList() {
 }
 ```
 
-<aside check>
-Take a look at your browser.
-You should see a list of todos.
-<div look></div>
-</aside>
+<LookAtBrowser>
+  Take a look at your browser. You should see a list of todos.
+</LookAtBrowser>
 
-<aside note>
-<div questions></div>
-You might have questions about the `key` prop on the `li` element. Make a note and bring them to review or do some searching on your own if you finish early.
-</aside>
+<Questions>
+  You might have questions about the `key` prop on the `li` element. Make a note
+  and bring them to review or do some searching on your own if you finish early.
+</Questions>
 
 Now we're going to add a little bit of interactivity to our todo list. We're going to add a `<form>` element with an `<input>` and a `<button>`.
 
@@ -177,18 +177,14 @@ function TodoList() {
 }
 ```
 
-<aside check>
-Take a look at your browser.
-You should see a list of todos.
-<div look></div>
-</aside>
+<LookAtBrowser>
+  Take a look at your browser. You should see a list of todos.
+</LookAtBrowser>
 
-<aside goal>
-  <div goal></div>
-You made it! You've built a tiny little todo list with react.
-</aside>
+<Goal>You made it! You've built a tiny little todo list with react.</Goal>
 
-<aside note>
-<div questions></div>
-You might have questions about... all of this. Review the source code you've written and reflect on what is familar and what is new. Bring those questions to review.
-</aside>
+<Questions>
+  You might have questions about... all of this. Review the source code you've
+  written and reflect on what is familar and what is new. Bring those questions
+  to review.
+</Questions>

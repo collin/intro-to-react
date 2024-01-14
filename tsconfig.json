@@ -6,21 +6,24 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "checkJs": true,
+    "allowJs": true,
 
     /* Bundler mode */
+    "baseUrl": "./book",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "noImplicitAny": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
 
     /* Linting */
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["book", "labs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
