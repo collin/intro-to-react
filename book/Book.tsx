@@ -5,30 +5,41 @@ const sections = import.meta.glob("./labs/**/section-*.mdx", { eager: true });
 
 const findLabModule = (path: string) => {
   const module = labs[`./labs/${path}/contents.mdx`];
-  if (!module) {
-    throw new Error(`Cannot find lab module for path ${path}`);
-  }
   return module;
 };
 
 const Lab = () => {
   const params = useParams();
   const Lab = findLabModule(params.lab);
+  if (!Lab) {
+    return <div>Lab not found</div>;
+  }
   return <Lab.default />;
 };
 
 const findSectionModule = (lab: string, section: string) => {
   const module = sections[`./labs/${lab}/${section}.mdx`];
-  if (!module) {
-    throw new Error(`Cannot find section module for path ${lab}/${section}`);
-  }
   return module;
 };
 
 const Section = () => {
   const params = useParams();
   const Section = findSectionModule(params.lab, params.section);
+  if (!Section) {
+    return <div>Section not found</div>;
+  }
   return <Section.default />;
+};
+
+const findSectionsForLab = (lab: string) => {
+  return Object.entries(sections)
+    .filter(([path]) => path.startsWith(`./labs/${lab}/section-`))
+    .map(([path, module]) => {
+      return {
+        path,
+        module,
+      };
+    });
 };
 
 export const Book = () => {
@@ -36,18 +47,19 @@ export const Book = () => {
     <div id="book-layout">
       <ol id="table-of-contents">
         {Object.entries(labs).map(([path, module]) => {
+          const labName = path.split("/")[2];
           return (
             <li key={path}>
               <label>{module.title ?? "(title missing)"}</label>
               <ol>
                 <li>
-                  <Link to={`/lab/${path.split("/")[2]}`}>Introduction</Link>
+                  <Link to={`/lab/${labName}`}>Introduction</Link>
                 </li>
-                {Object.entries(sections).map(([path, module]) => {
+                {findSectionsForLab(labName).map(({ path, module }) => {
                   return (
                     <li key={path}>
                       <Link
-                        to={`/lab/${path.split("/")[2]}/${path
+                        to={`/lab/${labName}/${path
                           .split("/")[3]
                           .replace(".mdx", "")}`}
                       >

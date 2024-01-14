@@ -1,0 +1,63 @@
+import { CopyPaste } from "CopyPaste";
+import { Objectives } from "Objectives";
+import { Questions } from "Questions";
+import { Goal } from "Goal";
+
+import openTerminal from "./images/open-terminal.png";
+import openedTerminal from "./images/opened-terminal.png";
+import viteStarted from "./images/vite-started.png";
+import inspectMenu from "./images/inspect-menu.png";
+import devTools from "./images/dev-tools.png";
+
+export const title = "Setup & Launch Vite Bundler";
+
+<Objectives>
+<div>
+  In this section, you will
+  
+  
+- launch a terminal in your solution folder 
+- and start a vite dev server.
+
+</div>
+
+</Objectives>
+
+## Setup & Launch Vite Bundler
+
+As you go through more of these labs, you'll be repeating a lot of the same steps
+to get started. In later labs fewer details will be provided. If you get stuck,
+come back to the earlier labs for a reresher.
+
+In the first lab you created your own `index.html` and `main.jsx` files. In this lab,
+equivalent files area already provided in your solution folder.
+
+To get started, we're going to need a terminal to build and serve our react code.
+
+A quick way to get a terminal open is to right click on `labs/02-to-jsx-or-not/your-solution` in the VSCode file explorer and click "Open in Integrated Terminal"
+
+<img class="mw-500 center" src={openTerminal} />
+
+You should see something like this:
+
+<img class="mw-500 center" src={openedTerminal} />
+
+In that terminal, start the vite dev server.
+
+```zsh
+npx vite dev
+```
+
+You should see this output indicating vite is bundling and serving your code. Open the url it provides in your browser.
+
+<img class="mw-500 center" src={viteStarted} />
+
+If you open that page, and open your browser's dev tools...
+
+<Goal>
+  You've successfully started a vite dev server and loaded the starter html.
+
+  <sub>Remember, in future labs you'll be expected to navigate this step on your own.</sub>
+</Goal>
+
+Head on to the [Next Section](./section-02.md)

@@ -1,0 +1,120 @@
+import { Objectives } from "Objectives";
+import { Goal } from "Goal";
+import { Hint } from "Hint";
+import { ReadDocs } from "ReadDocs";
+import { Activity } from "Activity";
+
+export const title = "Hello (jsx-free) World";
+
+<Objectives>
+In this section, you will:
+
+- Read the React documentation for the `createElement` function.
+- Write a React component without using JSX.
+
+</Objectives>
+
+<ReadDocs
+  url="https://react.dev/reference/react/createElement#createelement"
+  title={<>Read the documentation for `React.createElement`</>}
+>
+  There are some interactive code examples in the documentation. Try them out!
+  But don't forget to come back and complete the lab 😀
+</ReadDocs>
+
+In the file `NoJSX.js`, there is an empty React component.
+
+```js NoJSX.js
+export const NoJSX = () => {
+  return null;
+};
+```
+
+It's okay for a React component to return `null`. It not display as anything.
+But it's not very useful.
+
+The first thing for you to do is update that component to return a React element
+created with `React.createElement`.
+
+<Activity>
+  Change the `NoJSX` function to return an `h1` element with the contents `"Huh,
+  no JSX here!"`
+
+<Hint title="Can't find the `createElemen` function?">
+
+You'll need to import it from the `react` package.
+
+```js
+import { createElement } from "react";
+```
+
+</Hint>
+<Hint title="Not sure how to use the `createElement` function?">
+
+You'll need to call create element with three arguments:
+
+1. The type of element you want to create. In this case, it's the string `"h1"`.
+2. An object with the props you want to pass to the element. In this case, it's
+   an empty object.
+3. The children of the element. In this case, it's a string with the contents
+   `"Huh, no JSX here!"`.
+
+```js
+createElement("h1", {}, "Huh, no JSX here!");
+```
+
+</Hint>
+</Activity>
+
+<Activity>
+  Change the `NoJSX` function to return an `ol` element with three `li` children.
+
+<Hint title="Not sure how to nest the elements">
+
+You can nest the elements by passing them as the third, fourth, and fifth argument to
+`createElement`.
+
+```js
+createElement(
+  "ol",
+  {},
+  createElement("li", {}, "First"),
+  createElement("li", {}, "Second"),
+  createElement("li", {}, "Third"),
+);
+```
+
+</Hint>
+
+<Hint title={<>Getting an error about `unique "key" prop`</>}>
+
+There's a subtle difference between:
+
+```js
+createElement("div", {}, "First", "Second", "Third");
+```
+
+and
+
+```js
+createElement("div", {}, ["First", "Second", "Third"]);
+```
+
+The first example creates a `div` with three children. The second example creates a `div` with one child, which is an array of three strings.
+
+React treats these two cases differently. We'll cover the `key` prop in a later lab. For now, you can fix the error by unwrapping the array.
+
+</Hint>
+</Activity>
+
+<Goal>
+  Congratulations! You've written your first React component without using JSX.
+
+  <sub>
+    In practice, it's rare that you'll need to use `React.createElement` directly.
+    But it's good to understand that your JSX is getting compiled to this function.
+
+    When people say that React is "just JavaScript", this is what they mean.
+
+  </sub>
+</Goal>
